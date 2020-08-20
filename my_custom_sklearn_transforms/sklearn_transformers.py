@@ -16,9 +16,6 @@ class DropColumns(BaseEstimator, TransformerMixin):
         return data.drop(labels=self.columns, axis='columns')
 
 class DataFrameImputer(TransformerMixin):
-
-    def __init__(self):
-
     def fit(self, X, y=None):
 
         self.fill = pd.Series([X[c].value_counts().index[0]
